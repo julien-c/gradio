@@ -130,7 +130,9 @@ def home_page(examples=None, path=None):
                                              for interface in app.interface.config["input_interfaces"]],
                            output_interfaces=[interface[0]
                                               for interface in app.interface.config["output_interfaces"]],
-                           css=app.interface.css, examples=examples, path=path
+                           css=app.interface.css,
+                           examples=examples,
+                           path=path
                            )
 
 

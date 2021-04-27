@@ -29,6 +29,19 @@
     <meta name="twitter:image" content="{{ config['thumbnail'] or '' }}">
 
     <title>Gradio</title>
+    <link rel="stylesheet" href="https://huggingface.co/front/build/style.e43b2e14.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- VENDOR -->
     <link type="text/css" href="{{ vendor_prefix }}/static/css/vendor/jquery-ui.css" rel="stylesheet">
@@ -73,9 +86,135 @@
   </head>
 
   <body id="lib">
-    <div id="interface_target" class="container"></div>
+    
+    <!-- start hf header -->
+    <header class="border-b border-gray-100 z-10"><div class="w-full px-4 lg:px-6 xl:container flex items-center h-16"><div class="flex flex-1 items-center"><a class="flex flex-none items-center mr-5 lg:mr-6" href="/"><img alt="Hugging Face's logo" class="md:mr-2 w-7" src="https://huggingface.co/front/assets/huggingface_logo.svg">
+      <span class="text-lg font-bold whitespace-nowrap md:block">Hugging Face</span></a>
+    <div class="v2-quick-search relative flex-1 lg:max-w-sm mr-2 sm:mr-4 lg:mr-6" data-url="/api/quicksearch-html" search-type="all" with-links="true"><input autocomplete="off" class="v2-quick-search-input w-full dark:bg-gray-950 form-input-alt h-9 pl-8 pr-3 focus:shadow-xl" name="" placeholder="Search models, datasets, users..." spellcheck="false" type="text" role="combobox" aria-controls="combobox-9581" aria-expanded="true" aria-autocomplete="list" aria-haspopup="listbox">
+<svg class="absolute left-2.5 top-2.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z" fill="currentColor"></path></svg>
+<ul class="v2-quick-search-results z-40 hidden absolute w-full overflow-hidden text-sm bg-white border border-gray-100 rounded-lg shadow-lg divide-y divide-gray-100 dark:divide-gray-900" role="listbox" id="combobox-9581"></ul></div>
+    <button id="v2-phone-nav-button" class="lg:hidden relative flex-none place-self-stretch flex items-center justify-center w-8" type="button"><svg class="v2-phone-nav-icon-open" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="22" height="22" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M4 24h24v2H4z" fill="currentColor"></path><path d="M4 12h24v2H4z" fill="currentColor"></path><path d="M4 18h24v2H4z" fill="currentColor"></path><path d="M4 6h24v2H4z" fill="currentColor"></path></svg>
+      <svg class="v2-phone-nav-icon-close hidden" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1.1em" height="1.1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32"><path d="M24 9.4L22.6 8L16 14.6L9.4 8L8 9.4l6.6 6.6L8 22.6L9.4 24l6.6-6.6l6.6 6.6l1.4-1.4l-6.6-6.6L24 9.4z" fill="currentColor"></path></svg></button></div>
+  <nav aria-label="Main" class="ml-auto hidden lg:block"><ul class="flex items-center space-x-2"><li><a class="flex items-center group px-2 py-0.5 hover:text-indigo-700 dark:hover:text-gray-400" href="/models"><svg class="mr-1.5 text-gray-400 group-hover:text-indigo-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z" opacity=".25" fill="currentColor"></path><path class="uim-tertiary" d="M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z" fill="currentColor"></path></svg>
+      Models
+    </a></li>
+  <li><a class="flex items-center group px-2 py-0.5 hover:text-red-700 dark:hover:text-gray-400" href="/datasets"><svg class="mr-1.5 text-gray-400 group-hover:text-red-500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25"><ellipse cx="12.5" cy="5" fill="currentColor" fill-opacity="0.25" rx="7.5" ry="2"></ellipse><path d="M12.5 15C16.6421 15 20 14.1046 20 13V20C20 21.1046 16.6421 22 12.5 22C8.35786 22 5 21.1046 5 20V13C5 14.1046 8.35786 15 12.5 15Z" fill="currentColor" opacity="0.5"></path><path d="M12.5 7C16.6421 7 20 6.10457 20 5V11.5C20 12.6046 16.6421 13.5 12.5 13.5C8.35786 13.5 5 12.6046 5 11.5V5C5 6.10457 8.35786 7 12.5 7Z" fill="currentColor" opacity="0.5"></path><path d="M5.23628 12C5.08204 12.1598 5 12.8273 5 13C5 14.1046 8.35786 15 12.5 15C16.6421 15 20 14.1046 20 13C20 12.8273 19.918 12.1598 19.7637 12C18.9311 12.8626 15.9947 13.5 12.5 13.5C9.0053 13.5 6.06886 12.8626 5.23628 12Z" fill="currentColor"></path></svg>
+      Datasets
+    </a></li>
+  <li><a class="flex items-center group px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-400" href="/pricing">Pricing
+    </a></li>
+  <li class="b-r"><div class="v2-dropdown relative ">
+<button class="v2-dropdown-button cursor-pointer w-full  
+    px-2 py-0.5 hover:text-gray-500 dark:hover:text-gray-400 flex items-center" type="button">
+  <svg class="mr-1.5 text-gray-400 w-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" viewBox="0 0 11 8" preserveAspectRatio="xMidYMid meet"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 1.5H0V0.5H11V1.5ZM11 7.5H0V6.5H11V7.5ZM0 4.5H11V3.5H0V4.5Z"></path></svg>
+    Resources
+    </button>
+
+
+<div class="v2-dropdown-menu hidden absolute mt-1 min-w-full w-full md:w-auto bg-white rounded-xl overflow-hidden shadow-lg z-10 border border-gray-100 right-0 top-full 
+  "><ul class="min-w-full w-52">
+        <li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-blue-800 from-blue-50 dark:text-blue-100 dark:from-blue-900">Website
+          </div>
+          <ul><li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/metrics">
+  <svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M6 23H2a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1z" opacity=".25" fill="currentColor"></path><path class="uim-primary" d="M14 23h-4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1z" fill="currentColor"></path><path class="uim-tertiary" d="M22 23h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1z" opacity=".5" fill="currentColor"></path></svg>
+    Metrics</a></li>
+
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/languages">
+  <svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-primary" d="M17 13H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" fill="currentColor"></path><path class="uim-tertiary" d="M12 2a10 10 0 0 0-7.743 16.33l-1.964 1.963A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20zM9 7h6a1 1 0 0 1 0 2H9a1 1 0 0 1 0-2zm6 10H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm2-4H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M15 17H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm0-8H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2z" fill="currentColor"></path></svg>
+    Languages</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/organizations">
+  <svg class="mr-1.5 text-gray-400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-tertiary" d="M12 18a3.5 3.5 0 1 1 3.5-3.5A3.504 3.504 0 0 1 12 18z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M14.64 16.772a3.452 3.452 0 0 1-5.28 0A4.988 4.988 0 0 0 7 21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1a4.988 4.988 0 0 0-2.36-4.228z" fill="currentColor"></path><path class="uim-tertiary" d="M21 12a.996.996 0 0 1-.664-.252L12 4.338l-8.336 7.41a1 1 0 0 1-1.328-1.496l9-8a.999.999 0 0 1 1.328 0l9 8A1 1 0 0 1 21 12z" opacity=".5" fill="currentColor"></path><path class="uim-quaternary" d="M12 4.338l-8 7.111V21a1 1 0 0 0 1 1h3a1 1 0 0 1-1-1a4.988 4.988 0 0 1 2.36-4.228A3.469 3.469 0 0 1 8.5 14.5a3.5 3.5 0 0 1 7 0a3.469 3.469 0 0 1-.86 2.272A4.988 4.988 0 0 1 17 21a1 1 0 0 1-1 1h3a1 1 0 0 0 1-1v-9.551z" opacity=".25" fill="currentColor"></path></svg>
+    Organizations</a></li></ul></li>
+        <li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-yellow-800 from-yellow-50 dark:text-yellow-100 dark:from-yellow-900">Community
+          </div>
+          <ul><li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="https://discuss.huggingface.co/" target="_blank">
+  
+    Forum</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/blog">
+  
+    Blog</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="https://github.com/huggingface" target="_blank">
+  
+    GitHub</a></li></ul></li>
+        <li><div class="col-span-full px-4 py-0.5 flex items-center justify-between font-semibold bg-gradient-to-r to-white dark:to-gray-925 whitespace-nowrap text-green-800 from-green-50 dark:text-green-100 dark:from-green-900">Documentation
+          </div>
+          <ul><li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/docs">
+  
+    Model Hub doc</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="https://api-inference.huggingface.co/docs/" target="_blank">
+  
+    Inference API doc</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/transformers/">
+  
+    Transformers doc</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/docs/tokenizers/python/latest/">
+  
+    Tokenizers doc</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/docs/datasets/">
+  
+    Datasets doc</a></li>
+            <li><a class="v2-dropdown-entry flex items-center hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer px-3 py-1.5 whitespace-nowrap  hover:underline" href="/docs/accelerate/">
+  
+    Accelerate doc</a></li></ul></li>
+      </ul></div>
+</div></li>
+  <li><a class="flex items-center group mx-2 px-2 py-0.5 rounded-lg text-sm bg-gradient-to-l from-yellow-50 to-yellow-100 text-yellow-700  hover:from-yellow-100 dark:text-yellow-500 dark:hover:from-gray-900  dark:from-gray-925 dark:to-gray-900" href="https://angel.co/company/hugging-face/jobs" target="_blank">We're hiring!
+    </a></li>
+  <li><hr class="mx-2 w-0.5 h-5 border-none bg-gray-100 dark:bg-gray-800"></li>
+  <li><a class="px-2 py-0.5 block cursor-pointer hover:text-gray-500 dark:hover:text-gray-400" href="/login">Log In
+      </a></li>
+    <li><a class="ml-2 btn" href="/join">Sign Up </a></li></ul></nav>
+  <div id="v2-phone-nav-menu" class="hidden lg:hidden z-20 fixed bg-white top-16 inset-0 overflow-y-auto"><nav aria-label="Main"><ul class="px-2 pb-4 space-y-4"><li class="space-y-2.5"><div class="-mx-2 flex items-center px-2 font-semibold
+      text-purple-800 bg-gradient-to-r from-purple-50 to-white h-7 dark:text-gray-200 dark:from-purple-900 dark:via-gray-925 dark:to-gray-925">Account
+      </div>
+      <ul class="grid gap-2.5 grid-cols-2 content-start"><li><a class="btn w-full v2-dropdown-entry" href="/login">Log In </a></li>
+          <li><a class="btn w-full v2-dropdown-entry" href="/join">Sign Up </a></li></ul></li>
+    <li class="space-y-2.5"><div class="-mx-2 flex items-center px-2 font-semibold text-blue-800
+            bg-gradient-to-r from-blue-50 to-white h-7 dark:text-gray-200 dark:from-blue-900 dark:via-gray-925 dark:to-gray-925">Website
+      </div>
+      <ul class="grid gap-2.5 grid-cols-2 content-start"><li><a href="/models" class="btn w-full v2-dropdown-entry"><svg class="text-gray-400 mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M20.23 7.24L12 12L3.77 7.24a1.98 1.98 0 0 1 .7-.71L11 2.76c.62-.35 1.38-.35 2 0l6.53 3.77c.29.173.531.418.7.71z" opacity=".25" fill="currentColor"></path><path class="uim-tertiary" d="M12 12v9.5a2.09 2.09 0 0 1-.91-.21L4.5 17.48a2.003 2.003 0 0 1-1-1.73v-7.5a2.06 2.06 0 0 1 .27-1.01L12 12z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M20.5 8.25v7.5a2.003 2.003 0 0 1-1 1.73l-6.62 3.82c-.275.13-.576.198-.88.2V12l8.23-4.76c.175.308.268.656.27 1.01z" fill="currentColor"></path></svg>
+            Models
+          </a></li>
+        <li><a href="/datasets" class="btn w-full v2-dropdown-entry"><svg class="text-gray-400 mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 25 25"><ellipse cx="12.5" cy="5" fill="currentColor" fill-opacity="0.25" rx="7.5" ry="2"></ellipse><path d="M12.5 15C16.6421 15 20 14.1046 20 13V20C20 21.1046 16.6421 22 12.5 22C8.35786 22 5 21.1046 5 20V13C5 14.1046 8.35786 15 12.5 15Z" fill="currentColor" opacity="0.5"></path><path d="M12.5 7C16.6421 7 20 6.10457 20 5V11.5C20 12.6046 16.6421 13.5 12.5 13.5C8.35786 13.5 5 12.6046 5 11.5V5C5 6.10457 8.35786 7 12.5 7Z" fill="currentColor" opacity="0.5"></path><path d="M5.23628 12C5.08204 12.1598 5 12.8273 5 13C5 14.1046 8.35786 15 12.5 15C16.6421 15 20 14.1046 20 13C20 12.8273 19.918 12.1598 19.7637 12C18.9311 12.8626 15.9947 13.5 12.5 13.5C9.0053 13.5 6.06886 12.8626 5.23628 12Z" fill="currentColor"></path></svg>
+            Datasets
+          </a></li>
+        <li><a href="/metrics" class="btn w-full v2-dropdown-entry"><svg class="text-gray-400 mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-quaternary" d="M6 23H2a1 1 0 0 1-1-1v-8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1z" opacity=".25" fill="currentColor"></path><path class="uim-primary" d="M14 23h-4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v20a1 1 0 0 1-1 1z" fill="currentColor"></path><path class="uim-tertiary" d="M22 23h-4a1 1 0 0 1-1-1V10a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1z" opacity=".5" fill="currentColor"></path></svg>
+            Metrics
+          </a></li>
+        <li><a href="/languages" class="btn w-full v2-dropdown-entry"><svg class="text-gray-400 mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-primary" d="M17 13H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" fill="currentColor"></path><path class="uim-tertiary" d="M12 2a10 10 0 0 0-7.743 16.33l-1.964 1.963A1 1 0 0 0 3 22h9a10 10 0 0 0 0-20zM9 7h6a1 1 0 0 1 0 2H9a1 1 0 0 1 0-2zm6 10H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm2-4H7a1 1 0 0 1 0-2h10a1 1 0 0 1 0 2z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M15 17H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2zm0-8H9a1 1 0 0 1 0-2h6a1 1 0 0 1 0 2z" fill="currentColor"></path></svg>
+            Languages
+          </a></li>
+        <li><a href="/organizations" class="btn w-full v2-dropdown-entry"><svg class="text-gray-400 mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path class="uim-tertiary" d="M12 18a3.5 3.5 0 1 1 3.5-3.5A3.504 3.504 0 0 1 12 18z" opacity=".5" fill="currentColor"></path><path class="uim-primary" d="M14.64 16.772a3.452 3.452 0 0 1-5.28 0A4.988 4.988 0 0 0 7 21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1a4.988 4.988 0 0 0-2.36-4.228z" fill="currentColor"></path><path class="uim-tertiary" d="M21 12a.996.996 0 0 1-.664-.252L12 4.338l-8.336 7.41a1 1 0 0 1-1.328-1.496l9-8a.999.999 0 0 1 1.328 0l9 8A1 1 0 0 1 21 12z" opacity=".5" fill="currentColor"></path><path class="uim-quaternary" d="M12 4.338l-8 7.111V21a1 1 0 0 0 1 1h3a1 1 0 0 1-1-1a4.988 4.988 0 0 1 2.36-4.228A3.469 3.469 0 0 1 8.5 14.5a3.5 3.5 0 0 1 7 0a3.469 3.469 0 0 1-.86 2.272A4.988 4.988 0 0 1 17 21a1 1 0 0 1-1 1h3a1 1 0 0 0 1-1v-9.551z" opacity=".25" fill="currentColor"></path></svg>
+            Organizations
+          </a></li>
+        <li><a href="/pricing" class="btn w-full v2-dropdown-entry">Pricing
+          </a></li></ul></li>
+    <li class="space-y-2.5"><div class="-mx-2 flex items-center px-2 font-semibold
+            text-yellow-800 bg-gradient-to-r from-yellow-50 to-white h-7 dark:text-gray-200 dark:from-yellow-900 dark:via-gray-925 dark:to-gray-925">Community
+      </div>
+      <ul class="grid gap-2.5 grid-cols-2 content-start"><li><a href="https://discuss.huggingface.co/" class="btn w-full v2-dropdown-entry">Forum
+          </a></li>
+        <li><a href="/blog" class="btn w-full v2-dropdown-entry">Blog </a></li></ul></li>
+    <li class="space-y-2.5"><div class="-mx-2 flex items-center px-2 font-semibold
+            text-green-800 bg-gradient-to-r from-green-50 to-white h-7 dark:text-gray-200 dark:from-green-900 dark:via-gray-925 dark:to-gray-925">Documentation
+      </div>
+      <ul class="grid gap-2.5 grid-cols-2 content-start"><li><a href="/docs" class="btn w-full v2-dropdown-entry">Model Hub doc
+          </a></li>
+        <li><a href="https://api-inference.huggingface.co/docs/" class="btn w-full v2-dropdown-entry">Inference API doc
+          </a></li>
+        <li><a href="/transformers/" class="btn w-full v2-dropdown-entry">Transformers doc
+          </a></li>
+        <li><a href="/docs/tokenizers/python/latest/" class="btn w-full v2-dropdown-entry">Tokenizers doc
+          </a></li>
+        <li><a href="/docs/datasets/" class="btn w-full v2-dropdown-entry">Datasets doc
+          </a></li>
+        <li><a href="/docs/accelerate/" class="btn w-full v2-dropdown-entry">Accelerate doc
+          </a></li></ul></li></ul></nav></div></div></header>
+    <!-- end hf header -->
+
+    <div id="interface_target" class="container pt-6"></div>
     <div id="credit"><a href="https://github.com/gradio-app/gradio" target="_blank">
-      <img src="/static/img/logo_inline.png">
+      <img class="inline-block" src="/static/img/logo_inline.png">
     </a></div>
     <!-- VENDOR -->
     <script src="{{ vendor_prefix }}/static/js/vendor/jquery.min.js"></script>

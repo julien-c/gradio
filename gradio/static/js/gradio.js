@@ -12,8 +12,14 @@ function gradio(config, fn, target, example_file_path) {
         <div class="input_interfaces">
         </div>          
         <div class="panel_buttons">
-          <button class="clear panel_button">CLEAR</button>
-          <button class="submit panel_button">SUBMIT</button>
+          <button class="
+            clear panel_button
+            btn-widget w-24 h-10 px-5
+          ">Clear</button>
+          <button class="
+            submit panel_button
+            btn-widget w-24 h-10 px-5
+          ">Submit</button>
         </div>
       </div>
       <div class="panel output_panel">
@@ -150,7 +156,7 @@ function gradio(config, fn, target, example_file_path) {
     input_interface = Object.create(input_to_object_map[input_interface_data[0]]);
     if (input_interface_data[1]["label"]) {
       target.find(".input_interfaces").append(`
-        <div class="panel_header">${input_interface_data[1]["label"]}</strong>
+        <div class="flex items-center text-sm text-gray-500 mb-1.5">${input_interface_data[1]["label"]}</strong>
       `);
     }
     target.find(".input_interfaces").append(`
@@ -174,7 +180,7 @@ function gradio(config, fn, target, example_file_path) {
       output_interface_data[0]]);
     if (output_interface_data[1]["label"]) {
       target.find(".output_interfaces").append(`
-        <div class="panel_header">${output_interface_data[1]["label"]}</strong>
+        <div class="flex items-center text-sm text-gray-500 mb-1.5">${output_interface_data[1]["label"]}</strong>
       `);
     }
     target.find(".output_interfaces").append(`
@@ -183,7 +189,7 @@ function gradio(config, fn, target, example_file_path) {
       </div>
     `);
     target.find(".output_interfaces").append(`
-      <div class="loading_time" interface="${i}">  </div>
+      <div class="loading_time pt-1 text-gray-400 text-xs" interface="${i}">  </div>
     `);
     output_interface.target = target.find(`.output_interface[interface_id=${_id}]`);
     set_interface_id(output_interface, _id);

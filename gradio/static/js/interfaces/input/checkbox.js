@@ -1,11 +1,14 @@
 const checkbox = {
   html: `
     <div class="checkbox_solo">
-      <label class='holder'><input class="checkbox" type="checkbox">&nbsp;</label>
+      <label class='holder'>
+        <input class="checkbox rounded bg-gray-200 border-transparent focus:border-transparent text-blue-500 focus:ring-1 focus:ring-offset-2 focus:ring-gray-200 mr-2" type="checkbox">
+        &nbsp;
+      </label>
       <div class="interpretation interpret_sub"></div>
     </div>`,
   init: function(opts) {
-    this.target.find("input").checkboxradio();    
+    // this.target.find("input").checkboxradio();    
   },
   show_interpretation: function(data) {
     let html = ""

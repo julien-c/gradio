@@ -188,8 +188,9 @@ class Interface:
 
         if self.analytics_enabled:
             try:
-                requests.post(analytics_url + 'gradio-initiated-analytics/',
+                x = requests.post(analytics_url + 'gradio-initiated-analytics/',
                               data=data, timeout=3)
+                print(x)
             except (requests.ConnectionError, requests.exceptions.ReadTimeout):
                 pass  # do not push analytics if no network
 
@@ -351,6 +352,7 @@ class Interface:
     def run_until_interrupted(self, thread, path_to_local_server):
         try:
             while 1:
+                time.sleep(1)
                 pass
         except (KeyboardInterrupt, OSError):
             print("Keyboard interruption in main thread... closing server.")
@@ -477,6 +479,7 @@ class Interface:
                 sys.stdout.flush()
                 time.sleep(0.1)
         is_in_interactive_mode = bool(getattr(sys, 'ps1', sys.flags.interactive))
+        print(is_in_interactive_mode)
         if not is_in_interactive_mode:
             self.run_until_interrupted(thread, path_to_local_server)
         
@@ -542,8 +545,9 @@ def send_launch_analytics(analytics_enabled, inbrowser, is_colab, share, share_u
             'ip_address': ip_address
         }
         try:
-            requests.post(analytics_url + 'gradio-launched-analytics/',
+            x = requests.post(analytics_url + 'gradio-launched-analytics/',
                             data=data, timeout=3)
+            print(x)
         except (requests.ConnectionError, requests.exceptions.ReadTimeout):
             pass  # do not push analytics if no network
 

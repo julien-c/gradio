@@ -2,7 +2,7 @@ import os
 import shutil
 from gradio import processing_utils
 
-class Component():
+class Component:
     """
     A class for defining the methods that all gradio input and output components should have.
     """

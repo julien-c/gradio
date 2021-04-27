@@ -1,26 +1,6 @@
-body#lib {
-  font-family: 'Open Sans', sans-serif;
-  margin: 20px 0 0;
-  position: relative;
-  padding-bottom: 60px;
-}
-button, input[type="submit"], input[type="reset"], input[type="text"], input[type="button"], select[type="submit"] {
-	border: none;
-	font: inherit;
-	outline: inherit;
-  -webkit-appearance: none;
-}
-select {
-	font: inherit;
-}
-label, input[type=radio], input[type=checkbox], select, input[type=range], button, input[type="submit"], input[type="reset"], input[type="button"], select[type="submit"] {
-	cursor: pointer;
-}
 
 .loading_time {
-  color: #e67e22;
   text-align: right;
-  font-family: monospace;
 }
 .share {
   text-align: center;

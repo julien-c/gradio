@@ -1,6 +1,6 @@
 const label_output = {
   html: `
-    <div class="output_class"></div>
+    <div class="output_class hidden"></div>
     <div class="confidence_intervals">
       <div class="labels"></div>
       <div class="confidences"></div>
@@ -16,9 +16,12 @@ const label_output = {
         let c = data.confidences[i]
         let label = c["label"]
         let confidence = Math.round(c["confidence"] * 100) + "%";
-        this.target.find(".labels").append(`<div class="label" title="${label}">${label}</div>`);
+        this.target.find(".labels").append(`<div class="label 
+        flex items-start justify-between font-mono text-xs
+        animate__animated animate__fadeIn leading-none
+      " title="${label}">${label}</div>`);
         this.target.find(".confidences").append(`
-          <div class="confidence" style="min-width: calc(${confidence} - 12px);" title="${confidence}">${confidence}</div>`);
+          <div class="confidence h-1 mb-5 mt-1 rounded bg-gradient-to-r from-purple-400 to-purple-200 dark:from-indigo-500 dark:to-indigo-400" style="min-width: calc(${confidence} - 12px);" title="${confidence}"></div>`);
       }
     }
   },
